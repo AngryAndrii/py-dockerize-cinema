@@ -18,5 +18,5 @@ RUN adduser \
         django-user
 
 RUN chown -R django-user:django-user /vol/
-RUN chmod -R 755 /vol/web/
+RUN chmod -R 755 /files/media/
 USER django-user
