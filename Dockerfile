@@ -7,7 +7,7 @@ ENV PYTHONUNBUFFERED 1
 WORKDIR app/
 
 COPY requirements.txt requirements.txt
-RUN pip install -r requirements.txt
+RUN pip install -r requirements.txt --no-cache-dir
 
 COPY . .
 RUN mkdir -p /vol/web/media
@@ -19,4 +19,4 @@ RUN adduser \
 
 RUN chown -R django-user:django-user /vol/
 RUN chmod -R 755 /vol/web/
-
+USER django-user
